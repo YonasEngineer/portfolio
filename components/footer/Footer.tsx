@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
@@ -41,18 +41,20 @@ const Footer = () => {
                 🎵
               </span> */}
             </div>
-            <p className="text-gray-300 font-bold text-lg">Ayfokir.developer</p>
+            <p className="text-gray-300 font-bold text-lg">Yonas.developer</p>
           </div>
           <nav className="flex space-x-6 text-sm flex-wrap">
-            {["Services", "Works", "Resume", "Skills", "Blog", "Contact"].map((link, index) => (
-              <a
-                key={index}
-                href={`#${link.toLowerCase()}`}
-                className="hover:text-purple-500 transition-colors"
-              >
-                {link}
-              </a>
-            ))}
+            {["Services", "Works", "Resume", "Skills", "Blog", "Contact"].map(
+              (link, index) => (
+                <a
+                  key={index}
+                  href={`#${link.toLowerCase()}`}
+                  className="hover:text-purple-500 transition-colors"
+                >
+                  {link}
+                </a>
+              )
+            )}
           </nav>
         </div>
 
@@ -60,7 +62,7 @@ const Footer = () => {
         <div className="mt-8 text-center text-sm text-gray-500">
           &copy; 2024 All Rights Reserved by{" "}
           <a href="#" className="text-purple-500 hover:underline">
-            Ayfokir.developer
+            Yonas.developer
           </a>
         </div>
       </div>
@@ -72,10 +74,7 @@ const Footer = () => {
       >
         <div className="relative flex items-center justify-center w-12 h-12">
           {/* Circular Progress */}
-          <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 36 36"
-          >
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 36 36">
             {/* Background Circle */}
             <path
               className="text-gray-500"

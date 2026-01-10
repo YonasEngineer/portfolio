@@ -31,8 +31,8 @@ function Navbar() {
   // }, []);
   console.log("see isMenuOpen", isMenuOpen);
   return (
-        <nav className="flex items-center justify-between bg-[#272730] p-4 overflow-hidden w-full sticky top-0 z-[3000]">
-        <div>
+    <nav className="flex items-center justify-between bg-[#272730] p-4 overflow-hidden w-full sticky top-0 z-[3000]">
+      <div>
         <MdDeveloperMode color="white" size={20} className="hidden sm:block" />
         <div onClick={() => setIsMenuOpen((prev) => !prev)}>
           {isMenuOpen ? (
@@ -46,7 +46,7 @@ function Navbar() {
           )}
         </div>
       </div>
-      <div className="text-white font-bold ">Ayfokir.developer</div>
+      <div className="text-white font-bold ">Yonas.developer</div>
       <div className={` hidden items-center space-x-6 text-white  sm:flex `}>
         <Link href="#services">Services</Link>
         <Link href="#works">Works</Link>
@@ -75,14 +75,14 @@ function Navbar() {
         {/* <IoLogoFacebook  color="white" size={20} /> */}
         {/* <FaXTwitter color="white" size={20} /> */}
         <Link
-          href={"https://www.linkedin.com/in/ayfokir-tsega/"}
+          href={"https://www.linkedin.com/in/yonas-tsega/"}
           target="_blank"
           rel="noopener noreferrer"
         >
           <TiSocialLinkedin color="#6449D4" size={30} />
         </Link>
         <Link
-          href={"https://github.com/ayfokir"}
+          href={"https://github.com/YonasEngineer"}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -91,13 +91,13 @@ function Navbar() {
       </div>
       <div>
         {/* <IoIosSunny  color="#F7CC63" size={20}/> */}
-          <div className="flex items-center justify-center" >
-        <Link href={"#contact"}>
+        <div className="flex items-center justify-center">
+          <Link href={"#contact"}>
             <button className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:opacity-90 focus:outline-none">
               Hire me!
             </button>
-        </Link>
-          </div>
+          </Link>
+        </div>
       </div>
     </nav>
   );

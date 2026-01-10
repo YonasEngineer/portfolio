@@ -1,9 +1,9 @@
 import React from "react";
 interface PropsTypes {
-  id: string
+  id: string;
 }
 
-const Resume = ({id}:PropsTypes) => {
+const Resume = ({ id }: PropsTypes) => {
   // Data for Education and Experience
   const educationData = [
     {
@@ -19,7 +19,7 @@ const Resume = ({id}:PropsTypes) => {
       rating: "5.0/5",
     },
     {
-      year: "20121-2022",
+      year: "2022-2022",
       course: "Advanced UX/UI Bootcamp",
       institution: "Design Academy",
       rating: "4.9/5",
@@ -34,34 +34,41 @@ const Resume = ({id}:PropsTypes) => {
 
   const experienceData = [
     {
+      year: "2025 – Present",
+      role: "Senior Software Developer",
+      company: "Ministry of Labor and Skills (MoLS), Ethiopia",
+    },
+
+    {
+      year: "2024 – 2025",
+      role: "Lead Frontend Developer",
+      company: "Bekur Technologies",
+    },
+
+    {
       year: "2023 - 2024",
       role: "Full Stack Developer",
       company: "HST Tech Startup",
     },
+
     {
       year: "2021 - 2023",
       role: "Front-end Development",
       company: "West International Holding Limited",
     },
-    {
-      year: "2019 - 2020",
-      role: "Network Installation",
-      company: "Internship at EBBA",
-    },
-    {
-      year: "2021 - 2022",
-      role: "Front end developer",
-      company: "Frelance Platform",
-    },
   ];
 
   return (
-    <div className="bg-[#212125] text-gray-200 min-h-screen py-16 md:px-24 sm:px-16 px-8" id={`${id}`}>
+    <div
+      className="bg-[#212125] text-gray-200 min-h-screen py-16 md:px-24 sm:px-16 px-8"
+      id={`${id}`}
+    >
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl font-bold text-purple-500">My Resume</h1>
         <p className="text-gray-400 mt-4">
-          I believe that working hard and trying to learn every day will make me improve in satisfying my customers.
+          I believe that working hard and trying to learn every day will make me
+          improve in satisfying my customers.
         </p>
       </div>
 
@@ -96,7 +103,9 @@ const Resume = ({id}:PropsTypes) => {
                     <p className="text-gray-400">{item.institution}</p>
                   </div>
                   <div className="ml-auto mt-6">
-                    <p className="text-purple-400 font-bold text-right">{item.rating}</p>
+                    <p className="text-purple-400 font-bold text-right">
+                      {item.rating}
+                    </p>
                   </div>
                 </div>
               </div>

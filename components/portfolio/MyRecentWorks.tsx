@@ -8,9 +8,27 @@ interface PropsTypes {
 }
 const MyRecentWorks = ({ id }: PropsTypes) => {
   // Array of work projects with title and description
+
   const works = [
     {
-      title: "Fully Dynamic Website for HST Consulting PLC",
+      title:
+        "E-LMIS Examination System – Ministry of Labor and Skills (MoLS), Ethiopia",
+      description:
+        "Led frontend development of the MoLS E-LMIS Examination System, a national platform enabling 50,000+ students to take standardized digital exams, integrating secure authentication, real-time results, and administrative tools while coordinating backend GraphQL integrations.",
+      link: "https://tvet-exam.lmis.gov.et/",
+      image: "/images/molos-logo-blue.png", // Replace with the actual image path
+    },
+
+    {
+      title: "Finden AI (Cloud Data Integration Platform)",
+      description:
+        "Contributed to the development of Finden AI, a cloud data integration platform, by implementing secure multi-platform integrations, building a unified file browsing experience, enhancing intelligent user profiling, and creating data-driven dashboards.",
+      link: "https://www.finden.me/",
+      image: "/images/Logo.svg", // Replace with the actual image path
+    },
+
+    {
+      title: "Enterprise web platform for HST Consulting PLC",
       description:
         "A custom-built website for HST Consulting PLC with dynamic content management, responsive design, and secure authentication.",
       link: "https://hst-et.com/",
@@ -30,13 +48,6 @@ const MyRecentWorks = ({ id }: PropsTypes) => {
       link: "Source Code Private",
       image: "/images/office-automation.png", // Replace with the actual image path
     },
-    // {
-    //   title: "Book Rental App",
-    //   description:
-    //     "A book rental platform where users can rent books, track their rental history, and upload books for others to rent.",
-    //   link: "#",
-    //   image: "/images/book-rental.png", // Replace with the actual image path
-    // },
   ];
 
   return (
@@ -54,20 +65,39 @@ const MyRecentWorks = ({ id }: PropsTypes) => {
             key={index}
             className="bg-[#1F1F24] p-6 rounded-lg shadow-lg hover:shadow-xl transition-all"
           >
-            <Image
+            {/* <Image
               src={work.image}
               alt={work.title}
               width={80} // Set appropriate dimensions
               height={60}
               className="rounded-t-lg object-cover"
+            /> */}
+
+            <Image
+              src={work.image}
+              alt={work.title}
+              width={
+                work.title ===
+                "E-LMIS Examination System – Ministry of Labor and Skills (MoLS), Ethiopia"
+                  ? 240
+                  : 50
+              }
+              height={
+                work.title ===
+                "E-LMIS Examination System – Ministry of Labor and Skills (MoLS), Ethiopia"
+                  ? 160
+                  : 40
+              }
+              className="rounded-t-lg object-cover"
             />
+
             <h2 className="text-2xl font-semibold text-gray-300 mt-4">
               {work.title}
             </h2>
             <p className="text-gray-400 mt-2">{work.description}</p>
             <div className="mt-4">
               <div className="flex items-center text-white hover:text-white">
-                {!(work.title === "Office Automation System" ) ? (
+                {!(work.title === "Office Automation System") ? (
                   <Link
                     href={`${work.link}`}
                     target="_blank"
@@ -79,7 +109,9 @@ const MyRecentWorks = ({ id }: PropsTypes) => {
                   </Link>
                 ) : (
                   <Link href={"#contact"}>
-                    <button className="underline text-blue-600">Source Code is Private Request Access for Demo</button>
+                    <button className="underline text-blue-600">
+                      Source Code is Private Request Access for Demo
+                    </button>
                   </Link>
                 )}
               </div>
