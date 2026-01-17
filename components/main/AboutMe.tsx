@@ -1,7 +1,3 @@
-"use client";
-import React, { useRef } from "react"; // 🔹 ADD useRef
-import html2canvas from "html2canvas"; // 🔹 ADD
-import jsPDF from "jspdf"; // 🔹 ADD
 import { FaHandsClapping } from "react-icons/fa6";
 import { LiaDownloadSolid } from "react-icons/lia";
 import { IoArrowForwardSharp } from "react-icons/io5";
@@ -18,39 +14,6 @@ interface PropsTypes {
 }
 
 const AboutMe = ({ id }: PropsTypes) => {
-  // 🔹 ADD: ref for TEST ONLY
-  const testRef = useRef<HTMLDivElement | null>(null);
-
-  // 🔹 ADD: test function
-  const testHtmlCanvas = async () => {
-    if (!testRef.current) return;
-
-    const canvas = await html2canvas(testRef.current, {
-      scale: 2,
-      backgroundColor: "#ffffff",
-    });
-
-    const imgData = canvas.toDataURL("image/png");
-
-    const pdf = new jsPDF({
-      orientation: "portrait",
-      unit: "pt",
-      format: "a4",
-    });
-
-    const pageWidth = pdf.internal.pageSize.getWidth();
-
-    pdf.addImage(
-      imgData,
-      "PNG",
-      40,
-      40,
-      pageWidth - 80, // width
-      120, // height (small test PDF)
-    );
-
-    pdf.save("html2canvas-test.pdf");
-  };
   return (
     <>
       <div
@@ -141,34 +104,6 @@ const AboutMe = ({ id }: PropsTypes) => {
             className="rounded-lg shadow-lg"
           />
         </div>
-      </div>
-
-      {/* ================= HTML2CANVAS TEST (SAFE & SMALL) ================= */}
-
-      {/* Hidden tiny test content */}
-      <div
-        ref={testRef}
-        style={{
-          position: "absolute",
-          left: "-9999px",
-          top: 0,
-          padding: "20px",
-          background: "#ffffff",
-          color: "#000000",
-        }}
-      >
-        <h3>html2canvas production test</h3>
-        <p>This confirms html2canvas works in production.</p>
-      </div>
-
-      {/* Test button (remove later) */}
-      <div className="mt-6 flex justify-end px-8">
-        <button
-          onClick={testHtmlCanvas}
-          className="px-4 py-2 bg-red-600 text-white rounded"
-        >
-          Test html2canvas
-        </button>
       </div>
     </>
   );
